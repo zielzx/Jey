@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>É Tão Bom Te Amar</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            background-color: black;
+            overflow: auto; /* Permite a barra de rolagem se necessário */
+            color: white;
+            padding-bottom: 50px; /* Adiciona espaço extra na parte inferior */
+        }
+
+        h1 {
+            margin-top: 20px;
+            color: #d6336c;
+        }
+
+        img {
+            width: 300px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+            margin-top: 20px;
+        }
+
+        #contador {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #ADD8E6; /* Azul clarinho */
+            font-weight: bold;
+            position: relative;
+            top: 10px;
+        }
+
+        p {
+            margin: 20px;
+            text-align: justify;
+            font-size: 1.1em;
+            color: white;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+
+        .coracao {
+            position: absolute;
+            width: 50px; 
+            height: 50px;
+            background-image: url('https://i.ibb.co/WHMqZjn/pngtree-red-paint-stroke-heart-handdrawn-doodle-png-image-6513545.png');
+            background-size: cover;
+            animation: cair 10s linear infinite;
+            opacity: 0.8;
+            z-index: 1;
+        }
+
+        @keyframes cair {
+            0% {
+                top: -10px;
+                opacity: 0.9;
+                transform: scale(1) rotate(0deg);
+            }
+            100% {
+                top: 100%;
+                opacity: 0;
+                transform: scale(0.8) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>💖É Tão Bom Te Amar💖</h1>
+    <img src="https://i.ibb.co/LtPs9hP/foto.jpg" alt="Foto do casal"> <!-- Link da foto -->
+    <div id="contador">Juntos há 0 dias, 0 horas, 0 minutos, 0 segundos</div>
+    <p id="texto">Oi meu amor
+
+Sei que estou um pouco atrasado para te dar isso mas eu finalmente terminei e queria poder te dizer o quanto sou grato por ter você ao meu lado. Feliz aniversário de namoro! Cada momento que passamos juntos é único e especial, e eu só tenho a agradecer por tudo o que vivemos até aqui.
+Eu sei que nem sempre fui o melhor pra vc, e que já cometi muitos erros. Quero te pedir desculpas por tudo que eu já fiz, pelas vezes que te fiz derramar lagrimas, pelas palavras ditas sem pensar, pelos momentos de insegurança que te fiz passar. A verdade é que a insegurança às vezes me toma de surpresa, mas estou me esforçando muito para ser melhor, para não deixar que isso nos afaste.
+Eu sei que você ama a voz do Raul, e é engraçado pq eu me vejo querendo ser como ele em alguns aspectos, alguém que consegue se expressar de forma simples, mas verdadeira. Eu quero te dizer que vou me esforçar para ser igual a ele,  e também para ser mais seguro nas minhas palavras e ações. Eu quero que você saiba que estou sempre aprendendo com cada erro, e a cada dia me esforço para ser alguém melhor para você.
+Estar com você é sem dúvida o melhor que eu poderia ter. A sua companhia, o seu sorriso, a forma como você cuida de mim e de nós, tudo isso me faz sentir completo. Eu só peço que tenha paciência comigo, porque sei que posso e vou melhorar. Você me faz querer ser uma pessoa melhor, e não há nada que eu queira mais do que te ver feliz ao meu lado.
+Te amo meu amor, e prometo que vou fazer o meu melhor para sermos ainda mais felizes. Eu vou te tratar com mais carinho, com muito mais amor, respeito e compreensão. Estou aqui pra tudo que vc precisar e sempre estarei para te apoiar em cada passo.
+
+Eu te amo muito Galeguinha
+ASS: Zielxx._</p>
+
+    <script>
+        const inicioRelacao = new Date("2023-02-24T10:50:23"); // Altere para a data do início do relacionamento
+
+        function atualizarContador() {
+            const agora = new Date();
+            const diferenca = agora - inicioRelacao;
+
+            const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((diferenca / (1000 * 60 * 60)) % 24);
+            const minutos = Math.floor((diferenca / (1000 * 60)) % 60);
+            const segundos = Math.floor((diferenca / 1000) % 60);
+
+            document.getElementById('contador').textContent =
+                `Juntos há ${dias} dias, ${horas} horas, ${minutos} minutos, ${segundos} segundos`;
+        }
+
+        function criarCoracao() {
+            const coracao = document.createElement('div');
+            coracao.classList.add('coracao');
+            coracao.style.left = Math.random() * 100 + "vw";
+            coracao.style.animationDuration = Math.random() * 3 + 7 + "s"; // Velocidade lenta
+            coracao.style.opacity = Math.random() * 0.5 + 0.5;
+            document.body.appendChild(coracao);
+            setTimeout(() => coracao.remove(), 10000);
+        }
+
+        setInterval(atualizarContador, 1000);
+        setInterval(criarCoracao, 150); // Muitos corações caindo
+    </script>
+</body>
+</html>
